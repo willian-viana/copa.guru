@@ -13,10 +13,4 @@ Projeto destinado a oferecer um visualizador de dados "nunca antes visto na hist
 Vai Brasil, salve a seleção! Pãram pam
 ====
 
-\#vaiTerCopaSim
 
-\#vikingFutebolMoleque
-
-\#soccerLabs
-
-< Viking Labs >  2014
