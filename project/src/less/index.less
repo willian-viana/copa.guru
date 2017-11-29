@@ -1,0 +1,575 @@
+@MOBILE_WIDTH: 800px;
+@DESKTOP_WIDTH: 1024px;
+
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Dosis Regular'), local('Dosis-Regular'), url(http://themes.googleusercontent.com/static/fonts/dosis/v2/xIAtSaglM8LZOYdGmG1JqQ.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Shadows Into Light Two';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Shadows Into Light Two'), local('ShadowsIntoLightTwo-Regular'), url(http://themes.googleusercontent.com/static/fonts/shadowsintolighttwo/v2/gDxHeefcXIo-lOuZFCn2xU9H8fLq5zs1M0-u6-ewBcM.woff) format('woff');
+}
+
+
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100% !important;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+
+    @media all and (max-width: @MOBILE_WIDTH){  font-size: 14px; }
+    font-family: 'Dosis';
+    font-size: 16px;
+
+
+
+    //background:url(../img/fundo.jpg) no-repeat  center 100% fixed;
+    //@media all and (min-width: 1280px){ background:url(../img/fundo.jpg) no-repeat 100% center fixed; }
+    //@media all and (min-height: 1129px){ background:url(../img/fundo.jpg) no-repeat center 100% fixed; }
+
+}
+
+
+.bg{
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    z-index: -1;
+    text-align: center;
+
+    img{
+        min-height: 100%;
+        min-width: 100%;
+        margin-left: -640px;
+        margin-right: -640px;
+        display: inline-block;
+    }
+}
+
+::selection {
+    background-color: green;
+    color: yellow;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Shadows Into Light Two';
+    color: #3B0A57;
+}
+
+h2 {
+    background: rgba(255,255,255, 0.7);
+    padding: 6px 0;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent !important;
+}
+
+.site_block {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    //height: 4000px;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+
+}
+
+.top {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    background-color: #696969;
+    color: #fff;
+    display: none;
+
+    div {
+        display: inline-block;
+        width: 33%;
+        text-align: center;
+    }
+
+    div:last-child {
+        text-align: right;
+    }
+
+    div:first-child {
+        text-align: left;
+    }
+}
+
+.header_block {
+    color: #000;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    text-align: justify;
+    z-index: 10;
+    //height: 65px;
+    background-color: rgba(255,255,255,0.7);
+    padding: 0 20px;
+    box-sizing: border-box;
+
+
+/*
+    &:before{
+        content: "";
+        height: 100%;
+        width: 0;
+    }
+*/
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    button.fa{
+        font-size: 30px;
+        color: green;
+    }
+
+    .logo{
+        width: 20%;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .sidebar{
+        width: 80%;
+        text-align: right;
+
+        button{
+            margin: 8px 0;
+        }
+    }
+
+    .menu{
+        width: 80%;
+        text-align: right;
+
+         ul {
+            list-style-type: none;
+            position: relative;
+
+            li {
+                position: relative;
+                display: inline-block;
+                padding: 20px 13px;
+                @media all and (max-width: @MOBILE_WIDTH){ margin: 10px 5px; }
+
+                span {
+                    font-size: 17px;
+                    @media all and (max-width: 920px){  font-size: 16px;}
+                    @media all and (max-width: 850px){  font-size: 13px;}
+                }
+
+                &:hover{
+                    a{text-decoration: none;}
+                    background-color: rgba(0,128,0,0.2);
+                }
+
+                ul {
+                    position: absolute;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    width: 100%;
+                    left: -50px;
+                    text-align: center;
+                    top: 62px;
+
+
+
+                    li {
+                        display: block;
+
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+.wrapper {
+    display: inline-block;
+    position: relative;
+    min-height: calc(100% - 290px);
+    min-width: 300px;
+    max-width: 1024px;
+    width: 100%;
+    margin-top: 140px;/*header height*/
+    margin-bottom: 150px;/*footer height*/
+    padding: 0px  0 0px 0;
+    text-align: left;
+    box-sizing: border-box;
+    text-align: center;
+
+
+}
+
+/*.banner {
+   width: 100%;
+   height: 250px;
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+
+    }
+}*/
+
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    margin: 0;
+    margin-top: 62px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 0;
+      vertical-align: middle;
+
+    }
+    .call {
+        width: 100%;
+        max-width: 850px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+
+        .alert-ie {
+
+        }
+
+        .main-text, .main-title {
+            text-transform: uppercase;
+            margin: 40px 0 0;
+        }
+
+        .main-text{
+            background-color: rgba(255,255,255,0.4);
+            color: #3B0A57;
+            padding: 40px;
+            text-align: justify;
+            font-size: 18px;
+
+            a {
+                color: green;
+                &:hover {
+                    color: yellow;
+                }
+            }
+        }
+        .main-title {
+            color: #fff;
+        }
+    }
+}
+
+
+
+.group {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    text-align: center;
+    margin: 120px 0 40px 0;
+    color: #fff;
+
+    .group_inner{
+
+         font-size : 15px;
+         position: relative;
+
+        @media all and (max-width: @MOBILE_WIDTH){  font-size: 12px; }
+
+         padding: 20px 10px;
+         display: inline-block;
+         width: 100%;
+         max-width: 1024px;
+         font-family: 'Shadows Into Light Two';
+
+
+        .chart_group_container{
+            display: inline-block;
+
+            &.stage2{
+                 @media all and (max-width: @DESKTOP_WIDTH){ 
+                    margin: 0px 0 0 -40px;
+                    padding: 0;
+                 }             
+            }
+
+        }
+
+        input{
+            width : 20px;
+            margin : 2px;
+            text-align : center;
+            display : inline-block;
+            background: none;
+            border: 1px solid #fff;
+
+            &.penalty{
+               width : 16px;
+               font-size: 10px;
+            }
+
+        }
+
+        input:disabled {
+            border: none !important;
+        }
+
+        .team{
+            display : inline-block;
+            width : 100px;
+            @media all and (max-width: @MOBILE_WIDTH){   width : 80px; }
+
+            .large{
+                 font-size : 18px;
+            }
+        }
+
+        .vs{
+            display : inline-block;
+            margin : 0 5px;
+        }
+
+        .dosis {
+            font-family: 'Dosis';
+        }
+
+        .shadow {
+            font-family: 'Shadows Into Light Two'
+        }
+
+        .details {
+            height: 210px;
+        }
+
+        .match_container{
+            @media all and (min-width: @DESKTOP_WIDTH){
+                height: 360px;
+                width : 320px;
+                position: absolute;
+                right: 0;
+                top: 16%;
+            }
+        }
+
+    }
+
+}
+
+p.shadow {
+    font-family: 'Shadows Into Light Two';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+.footer_block {
+    margin: 120px 0 0 0;
+    display: block;
+    position: relative;
+    height: 100%;
+    max-height: 420px;
+
+    .copaguru {
+        padding: 10px 20px;
+        text-align: left;
+
+        a {
+            color: yellow;
+
+            &:hover {
+                color: green;
+            }
+        }
+    }
+
+    #share{
+        padding: 10px 20px;
+    }
+
+    .footer {
+        width: 100%;
+        text-align: center;
+        padding: 45px 15px 15px 15px;
+        background-color: rgba(0, 0, 0, 0.4);
+
+        p {
+            margin: 15px 0 0 0;
+            text-align: justify;
+            color: #fff;
+        }
+
+        h2 {
+            background: none;
+            padding: 0 8px 28px 8px;
+            color: #fff;
+            text-align: left;
+
+        }
+
+        .social_block {
+            padding: 10px 20px;
+        }
+
+        #contato, .lb_layout_single > .social-share, .lb_layout_single > .fb-like-box {
+            text-align: justify;
+        }
+
+
+    }
+}
+
+.match > p {
+    font-size: 24px;
+}
+
+
+.to-top {
+    width: 100px;
+    right: 0;
+    position: absolute;
+    z-index: 9;
+    bottom: 15px;
+    color: #fff;
+}
+
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(100,100,100,0.5);
+}
+
+.fb-share-button {
+  margin-right: 45px;
+}
+
+#twitter-widget-0, #___plusone_0 iframe {
+    margin: 0 5px;
+    width: 93px !important;
+}
+
+.fb-share-button > span {
+    vertical-align: inherit !important;
+}
+
+.never_in_mobile{
+   @media all and (max-width: @MOBILE_WIDTH){ display: none !important; }
+}
+.only_in_mobile{
+   @media all and (min-width: @MOBILE_WIDTH){ display: none !important; }
+}
+
+
+.never_in_desktop{
+   @media all and (min-width: @MOBILE_WIDTH) and (max-width: @DESKTOP_WIDTH){ display: none !important; }
+}
+.only_in_desktop{
+   @media all and (max-width: @MOBILE_WIDTH) and (min-width: @DESKTOP_WIDTH){ display: none !important; }
+}
+
+
+.form_container{
+    height: 400px;
+
+    iframe{
+        height: 100%;
+    }
+}
+
+
+svg{
+    .points_text{
+        font-size: 8px !important;
+        font-family: "Dosis";
+    }
+
+    .goals{
+        font-size: 16px !important;
+        font-family: "Shadows Into Light Two";
+    }
+
+}
+
+.fb-like-box-container{
+    overflow: hidden;
+}
+
+#svg_fase_2{
+    cursor: pointer;
+}
+
+
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.4);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}

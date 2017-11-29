@@ -1,0 +1,118 @@
+{
+"paises": 
+[
+  {"nome":"Brasil", "grupo":"A", "cor1":"#dddd00", "cor2":"#00aa00", "img":"Brazil.png" },
+  {"nome":"Croácia", "grupo":"A", "cor1":"#dd0000", "cor2":"#0000dd", "img":"Croatia.png" },
+  {"nome":"México", "grupo":"A", "cor1":"#88dd88", "cor2":"#008800", "img":"Mexico.png" },
+  {"nome":"Camarões", "grupo":"A", "cor1":"#008800", "cor2":"#dd0000", "img":"Cameroon.png" },
+  
+  
+  {"nome":"Espanha", "grupo":"B", "cor1":"#dd0000", "cor2":"#0000ee", "img":"Spain.png" },
+  {"nome":"Holanda", "grupo":"B", "cor1":"#dd9900", "cor2":"#000000", "img":"Netherlands.png" },
+  {"nome":"Chile", "grupo":"B", "cor1":"#0000dd", "cor2":"#ff0000", "img":"Chile.png" },
+  {"nome":"Austrália", "grupo":"B", "cor1":"#dddd00", "cor2":"#00dd00", "img":"Australia.png" },
+  
+  
+  
+  {"nome":"Colômbia", "grupo":"C", "cor1":"#dddd00", "cor2":"#0000aa", "img":"Colombia.png" },
+  {"nome":"Grécia", "grupo":"C", "cor1":"#8888dd", "cor2":"#dddddd", "img":"greece.png" },
+  {"nome":"Costa do Marfim", "grupo":"C", "cor1":"#ddaa44", "cor2":"#008800", "img":"Cote_d'Ivoire.png" },
+  {"nome":"Japão", "grupo":"C", "cor1":"#dddddd", "cor2":"#dd0000", "img":"Japan.png" },
+  
+  
+  
+  {"nome":"Uruguai", "grupo":"D", "cor1":"#8888dd", "cor2":"#dddddd", "img":"Uruguay.png" },
+  {"nome":"Costa Rica", "grupo":"D", "cor1":"#dd0000", "cor2":"#0000aa", "img":"Costa-rica.png" },
+  {"nome":"Inglaterra", "grupo":"D", "cor1":"#dddddd", "cor2":"#000044", "img":"England.png" },
+  {"nome":"Itália", "grupo":"D", "cor1":"#0000dd", "cor2":"#dddddd", "img":"Italy.png" },
+  
+  
+  
+  {"nome":"Suiça", "grupo":"E", "cor1":"#dd0000", "cor2":"#dddddd", "img":"Switzerland.png" },
+  {"nome":"Equador", "grupo":"E", "cor1":"#dddd00", "cor2":"#0000aa", "img":"Ecuador.png" },
+  {"nome":"França", "grupo":"E", "cor1":"#0000dd", "cor2":"#dddddd", "img":"France.png" },
+  {"nome":"Honduras", "grupo":"E", "cor1":"#dddddd", "cor2":"#4444aa", "img":"Honduras.png" },
+  
+  
+  
+  {"nome":"Argentina", "grupo":"F", "cor1":"#8888dd", "cor2":"#dddddd", "img":"Argentina.png" },
+  {"nome":"Bósnia", "grupo":"F", "cor1":"#0000dd", "cor2":"#dddddd", "img":"Bosnia-and-Herzegovina.png" },
+  {"nome":"Irã", "grupo":"F", "cor1":"#dd4444", "cor2":"#dddddd", "img":"Iran.png" },
+  {"nome":"Nigéria", "grupo":"F", "cor1":"#00dd00", "cor2":"#dddddd", "img":"Nigeria.png" },
+  
+  
+  
+  {"nome":"Alemanha", "grupo":"G", "cor1":"#dddddd", "cor2":"#000000", "img":"Germany.png" },
+  {"nome":"Portugal", "grupo":"G", "cor1":"#dd4444", "cor2":"#44dd44", "img":"Portugal.png" },
+  {"nome":"Gana", "grupo":"G", "cor1":"#dd2222", "cor2":"#aaaa00", "img":"Ghana.png" },
+  {"nome":"EUA", "grupo":"G", "cor1":"#0022aa", "cor2":"#dddddd", "img":"USA.png" },
+  
+  
+  {"nome":"Bélgica", "grupo":"H", "cor1":"#dd0000", "cor2":"#880000", "img":"Belgium.png" },
+  {"nome":"Argélia", "grupo":"H", "cor1":"#88dd88", "cor2":"#008800", "img":"Algeria.png" },
+  {"nome":"Rússia", "grupo":"H", "cor1":"#aa4444", "cor2":"#0000aa", "img":"Russia.png" },
+  {"nome":"Coréia do Sul", "grupo":"H", "cor1":"#0022aa", "cor2":"#dd0000", "img":"South-Korea.png" }
+],
+
+"jogos":[
+  {"time1":"Brasil", "gols1":3, "time2":"Croácia", "gols2":2, "estadio":2, "cidade":2, "data":"12/06", "horario":"17:00", "grupo":"A"},
+  {"time1":"Brasil", "gols1":null, "time2":"México", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"A"},
+  {"time1":"Brasil", "gols1":null, "time2":"Camarões", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"A"},
+  {"time1":"Croácia", "gols1":null, "time2":"México", "gols2":null, "estadio":5, "cidade":5, "data":"23/06", "horario":"17:00", "grupo":"A"},
+  {"time1":"Croácia", "gols1":null, "time2":"Camarões", "gols2":null, "estadio":0, "cidade":0, "data":"18/06", "horario":"18:00", "grupo":"A"},
+  {"time1":"México", "gols1":1, "time2":"Camarões", "gols2":1, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"A"},
+  
+  {"time1":"Espanha", "gols1":null, "time2":"Holanda", "gols2":null, "estadio":3, "cidade":3, "data":"13/06", "horario":"16:00", "grupo":"B"},
+  {"time1":"Espanha", "gols1":null, "time2":"Chile", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"B"},
+  {"time1":"Espanha", "gols1":null, "time2":"Austrália", "gols2":null, "estadio":1, "cidade":1, "data":"23/06", "horario":"13:00", "grupo":"B"},
+  {"time1":"Holanda", "gols1":null, "time2":"Chile", "gols2":null, "estadio":2, "cidade":2, "data":"23/06", "horario":"13:00", "grupo":"B"},
+  {"time1":"Holanda", "gols1":null, "time2":"Austrália", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"B"},
+  {"time1":"Chile", "gols1":null, "time2":"Austrália", "gols2":null, "estadio":4, "cidade":4, "data":"13/06", "horario":"18:00", "grupo":"B"},
+  
+  {"time1":"Colômbia", "gols1":null, "time2":"Grécia", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"C"},
+  {"time1":"Colômbia", "gols1":null, "time2":"Costa do Marfim", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"C"},
+  {"time1":"Colômbia", "gols1":null, "time2":"Japão", "gols2":null, "estadio":4, "cidade":4, "data":"24/06", "horario":"16:00", "grupo":"C"},
+  {"time1":"Grécia", "gols1":null, "time2":"Costa do Marfim", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"C"},
+  {"time1":"Grécia", "gols1":null, "time2":"Japão", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"C"},
+  {"time1":"Costa do Marfim", "gols1":null, "time2":"Japão", "gols2":null, "estadio":5, "cidade":5, "data":"14/06", "horario":"22:00", "grupo":"C"},
+    
+  {"time1":"Uruguai", "gols1":null, "time2":"Costa Rica", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"D"},
+  {"time1":"Uruguai", "gols1":null, "time2":"Inglaterra", "gols2":null, "estadio":2, "cidade":2, "data":"19/06", "horario":"16:00", "grupo":"D"},
+  {"time1":"Uruguai", "gols1":null, "time2":"Itália", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"D"},
+  {"time1":"Costa Rica", "gols1":null, "time2":"Inglaterra", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"D"},
+  {"time1":"Costa Rica", "gols1":null, "time2":"Itália", "gols2":null, "estadio":5, "cidade":5, "data":"20/06", "horario":"13:00", "grupo":"D"},
+  {"time1":"Inglaterra", "gols1":null, "time2":"Itália", "gols2":null, "estadio":0, "cidade":0, "data":"14/06", "horario":"18:00", "grupo":"D"},
+  
+  {"time1":"Suiça", "gols1":null, "time2":"Equador", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"E"},
+  {"time1":"Suiça", "gols1":null, "time2":"França", "gols2":null, "estadio":3, "cidade":3, "data":"20/06", "horario":"16:00", "grupo":"E"},
+  {"time1":"Suiça", "gols1":null, "time2":"Honduras", "gols2":null, "estadio":0, "cidade":0, "data":"25/06", "horario":"16:00", "grupo":"E"},
+  {"time1":"Equador", "gols1":null, "time2":"França", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"E"},
+  {"time1":"Equador", "gols1":null, "time2":"Honduras", "gols2":null, "estadio":1, "cidade":1, "data":"20/06", "horario":"19:00", "grupo":"E"},
+  {"time1":"França", "gols1":null, "time2":"Honduras", "gols2":null, "estadio":6, "cidade":6, "data":"15/06", "horario":"16:00", "grupo":"E"},
+  
+  {"time1":"Argentina", "gols1":null, "time2":"Bósnia", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"F"},
+  {"time1":"Argentina", "gols1":null, "time2":"Irã", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"F"},
+  {"time1":"Argentina", "gols1":null, "time2":"Nigéria", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"F"},
+  {"time1":"Bósnia", "gols1":null, "time2":"Irã", "gols2":null, "estadio":3, "cidade":3, "data":"25/06", "horario":"13:00", "grupo":"F"},
+  {"time1":"Bósnia", "gols1":null, "time2":"Nigéria", "gols2":null, "estadio":4, "cidade":4, "data":"21/06", "horario":"18:00", "grupo":"F"},
+  {"time1":"Irã", "gols1":null, "time2":"Nigéria", "gols2":null, "estadio":1, "cidade":1, "data":"16/06", "horario":"16:00", "grupo":"F"},
+  
+  {"time1":"Alemanha", "gols1":null, "time2":"Portugal", "gols2":null, "estadio":3, "cidade":3, "data":"16/06", "horario":"13:00", "grupo":"G"},
+  {"time1":"Alemanha", "gols1":null, "time2":"Gana", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"G"},
+  {"time1":"Alemanha", "gols1":null, "time2":"EUA", "gols2":null, "estadio":5, "cidade":5, "data":"26/06", "horario":"13:00", "grupo":"G"},
+  {"time1":"Portugal", "gols1":null, "time2":"Gana", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"G"},
+  {"time1":"Portugal", "gols1":null, "time2":"EUA", "gols2":null, "estadio":0, "cidade":0, "data":"22/06", "horario":"18:00", "grupo":"G"},
+  {"time1":"Gana", "gols1":null, "time2":"EUA", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"G"},
+  
+  {"time1":"Bélgica", "gols1":null, "time2":"Argélia", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"H"},
+  {"time1":"Bélgica", "gols1":null, "time2":"Rússia", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"H"},
+  {"time1":"Bélgica", "gols1":null, "time2":"Coréia do Sul", "gols2":null, "estadio":2, "cidade":2, "data":"26/06", "horario":"17:00", "grupo":"H"},
+  {"time1":"Argélia", "gols1":null, "time2":"Rússia", "gols2":null, "estadio":1, "cidade":1, "data":"26/06", "horario":"17:00", "grupo":"H"},
+  {"time1":"Argélia", "gols1":null, "time2":"Coréia do Sul", "gols2":null, "estadio":0, "cidade":0, "data":"12/06", "horario":"00:00", "grupo":"H"},
+  {"time1":"Rússia", "gols1":null, "time2":"Coréia do Sul", "gols2":null, "estadio":4, "cidade":4, "data":"17/06", "horario":"18:00", "grupo":"H"}
+],
+
+"estadios" : ["Arena Amazonas", "Arena da Baixada", "Arena Corinthians","Arena Fonte Nova","Arena Pantanal","Arena Pernambuco","Estádio Beira-Rio","Estádio Castelão","Estádio do Mineirão", "Estádio das Dunas","Estádio de Brasília","Estádio do Maracanã"],
+"cidades" : ["Manaus - AM","Curitiba - PR","São Paulo - SP","Salvador - BA","Cuiabá - MT","Recife - PE","Porto Alegre - RS","Fortaleza - CE","Belo Horizonte - MG","Natal - RN","Brasília - DF","Rio de Janeiro - RJ"]
+
+} 

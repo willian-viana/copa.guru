@@ -1,0 +1,95 @@
+/*
+
+.logo{
+    background: url("./embed/logo.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 40px ;
+    height: 40px;
+}
+
+*/
+
+.logo_guru {
+    background: url("./embed/guru.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 278px;
+    height: 182px;
+    display: inline-block;
+}
+
+
+.logo_vk {
+    background: url("./embed/viking-labs.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 117px;
+    height: 13px;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+
+.logo_vk_classico {
+    background: url("./embed/viking-labs-classico.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 117px;
+    height: 16px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 15px;
+
+}
+
+.logo_header{
+    background: url("./embed/logo.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 150px ;
+    height: 43px;
+}
+
+.logo_footer{
+    background: url("./embed/logo_footer.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 150px ;
+    height: 43px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.grafico-01 {
+    background: url("./embed/grafico-01.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 500px ;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.grafico-02 {
+    background: url("./embed/grafico-02.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 500px ;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.grafico-03 {
+    background: url("./embed/grafico-03.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 500px ;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.grafico-04 {
+    background: url("./embed/grafico-04.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 500px ;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.tabela {
+    background: url("./embed/tabela.jpg") no-repeat center;
+    background-size: 100% 100%;
+    width: 272px ;
+    height: 324px;
+    margin: 0 auto;
+}

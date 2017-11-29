@@ -1,0 +1,417 @@
+- var title = 'Copa Guru';
+- var description = 'Copa.Guru: Gráficos e simuladores para acompanhar a Copa do Mundo de Futebol FIFA 2014 de uma forma diferente! Divirta-se ;)';
+- var url = 'http://copa.guru';
+- var vl = 'Viking Labs (vikinglabs.com.br)';
+- var googleVerification = '';
+
+- var facebookImage = './img/redes-sociais.jpg';
+- var facebookImageWidth = '563'; // Sem px, só o número
+- var facebookImageHeight = '563'; // Sem px, só o número
+- var facebookAdmin = '508633372528551';
+- var facebookAppId = '684034044983601';
+
+- var twitter = '@VikingLabsBR';
+- var twitterImage = facebookImage; // Pode ser a mesma do Facebok, mas tem que ter 200x200px
+
+- var googlePlusImage = facebookImage;
+
+
+
+mixin stage2Matches(f)
+  .matches
+    div(ng-repeat="m in matches | filter: {#{f} : true} | orderBy:'jogo'" )
+      div
+        .team.dosis
+          span(ng-style="{ 'font-weight' : selected && selected.data.nome == m.time1.nome ? 'bold' : 'normal'}") {{m.time1.nome}}
+        input.penalty(type="text", ng-model="m.penalty1", ng-disabled="m.desabilitado", ng-change="change()", ng-show="!!m.gols1 && !!m.gols2 && m.gols1 == m.gols2")
+        input(type="text", ng-model="m.gols1", ng-disabled="m.desabilitado", ng-change="change()")
+        .vs
+          span X
+        input(type="text", ng-model="m.gols2", ng-disabled="m.desabilitado", ng-change="change()")
+        input.penalty(type="text", ng-model="m.penalty2", ng-disabled="m.desabilitado", ng-change="change()", ng-show="!!m.gols1 && !!m.gols2 && m.gols1 == m.gols2")
+        .team.dosis
+          span(ng-style="{ 'font-weight' : selected && selected.data.nome == m.time2.nome ? 'bold' : 'normal'}") {{m.time2.nome}}
+
+
+mixin stage2()
+  section.group(id="gstage2")
+    .lb_layout_single.group_inner
+      .lb_layout_single.group_inner
+        h2 Fase 2
+        .lb_layout_single
+          .chart_group_container.dosis.stage2
+            svg( id="svg_fase_2")
+            .match_container(ng-show="selected && selected.data.fase2 && selected.type == 'match'")
+              .dosis.match
+                h2(ng-show="selected.data.oitavas") Oitavas de Final
+                h2(ng-show="selected.data.quartas") Quartas de Final
+                h2(ng-show="selected.data.semi") Semifinal
+                h2(ng-show="selected.data.terceiro") 3° Lugar
+                h2(ng-show="selected.data.final") Final
+                br
+                p
+                  .team.dosis
+                    span.large {{selected.data.time1.nome}}
+                  input.penalty(type="text", ng-model="selected.data.penalty1", ng-disabled="selected.data.desabilitado", ng-change="change()", ng-show="!!selected.data.gols1 && !!selected.data.gols2 && selected.data.gols1 == selected.data.gols2")
+                  input(type="text", ng-model="selected.data.gols1", ng-disabled="selected.data.desabilitado", ng-change="change()")
+                  .vs
+                    span X
+                  input(type="text", ng-model="selected.data.gols2", ng-disabled="selected.data.desabilitado", ng-change="change()")
+                  input.penalty(type="text", ng-model="selected.data.penalty2", ng-disabled="selected.data.desabilitado", ng-change="change()", ng-show="!!selected.data.gols1 && !!selected.data.gols2 && selected.data.gols1 == selected.data.gols2")
+                  .team.dosis
+                    span.large {{selected.data.time2.nome}}
+                br
+                p Local: {{stadiums[selected.data.estadio]}}
+                p {{cities[selected.data.cidade]}}
+                p Data: {{selected.data.data}} às {{selected.data.horario}}
+        br
+        hr
+        .lb_layout_double
+          .lb_layout_single
+            h2 Oitavas de Final
+            +stage2Matches('oitavas')
+          .lb_layout_single
+            h2 Quartas de Final
+            +stage2Matches('quartas')
+        br
+        hr
+        .lb_layout_double
+          .lb_layout_single
+            h2 Semifinal
+            +stage2Matches('semi')
+          .lb_layout_single
+            h2 3° Lugar
+            +stage2Matches('terceiro')
+        br
+        hr
+        .lb_layout_single
+          h2 Final
+          +stage2Matches('final')
+
+
+mixin all()
+  section.group(id="gall")
+    .lb_layout_single.group_inner
+      .chart_group_container
+        svg( id="svg_all")
+
+mixin group(g)
+  section.group(id="g#{g}")
+    .lb_layout_double.group_inner
+
+        .lb_layout_single
+           .chart_group_container.dosis
+             svg( id="svg_grupo_#{g}")
+
+        .lb_layout_single
+            .group_table
+              h2 Grupo #{g}
+              table.table
+                thead
+                  tr
+                    td
+                    td Seleção
+                    td(title="Pontos Ganhos") PG
+                    td(title="Jogos") J
+                    td(title="Vitórias") V
+                    td(title="Empates") E
+                    td(title="Derrotas") D
+                    td(title="Saldo de Gols") SG
+                    td(title="Gols Pró") GP
+                    td(title="Gols Contra") GC
+                tbody
+                  tr(ng-style="{'background-color' : selected.data.nome == t.nome ? toRgba(t.cor1,0.3) : ''}", ng-mouseover="sel(t)",  ng-mouseout="unsel()", ng-repeat="t in teams | filter: {grupo : '#{g}'} | orderBy:'pos()':reverse")
+                    td {{t.pos()}}
+                    td.dosis {{t.nome}}
+                    td {{t.pontos()}}
+                    td {{t.j()}}
+                    td {{t.v()}}
+                    td {{t.e()}}
+                    td {{t.d()}}
+                    td {{t.sg()}}
+                    td {{t.gp()}}
+                    td {{t.gc()}}
+              .details
+                .matches
+                  div(ng-repeat="m in matches | filter: {grupo : '#{g}'} | orderBy:'data':reverse" )
+                    div(ng-show="!selected || selected.data == m || selected.type == 'team'")
+                      .team.dosis
+                        span(ng-style="{ 'font-weight' : selected && selected.data.nome == m.time1 ? 'bold' : 'normal'}") {{m.time1}}
+                      input(type="text", ng-model="m.gols1", ng-disabled="m.desabilitado", ng-change="change('#{g}')")
+                      .vs
+                        span X
+                      input(type="text", ng-model="m.gols2", ng-disabled="m.desabilitado", ng-change="change('#{g}')")
+                      .team.dosis
+                        span(ng-style="{ 'font-weight' : selected && selected.data.nome == m.time2 ? 'bold' : 'normal'}") {{m.time2}}
+
+                .dosis.match(ng-show="selected && selected.data.grupo == '#{g}' && selected.type == 'match'")
+                  br
+                  p Local: {{stadiums[selected.data.estadio]}} - {{cities[selected.data.cidade]}}
+                  p Data: {{selected.data.data}} às {{selected.data.horario}}
+
+
+doctype html
+html(ng-app="copaGuru")
+  head
+
+    //- ************************** Tags Padrão ************************** //
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(http-equiv='Cache-control', content='public')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+    title #{title}
+
+    //- ************************** Tags SEO ************************** //
+    meta(name='robots' content='index, follow')
+    meta(name='language' content='pt-br')
+    meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+    meta(name='description' content='#{description}')
+    meta(name='keywords' content='copa guru, copa dados, copa gráficos, copa do mundo, vai ter copa, tabela')
+    meta(name='classification' content='copa do mundo no Brasil em 2014, copa do mundo no Brasil, copa do mundo, copa')
+    meta(name='distribution' content='Global')
+    meta(name='rating' content='General')
+    meta(name='google-site-verification' content='#{googleVerification}')
+    meta(name='robots' content='index, follow')
+    meta(name='revisit-after' content='3 days')
+    meta(name='creator' content='#{vl}')
+    meta(name='publisher' content='#{vl}')
+
+    //- ************************** Tags Open Graph ************************** //
+    meta(property='og:locale' content='pt_BR')
+    meta(property='og:url' content='#{url}')
+    meta(property='og:title' content='#{title}')
+    meta(property='og:site_name' content='#{title}')
+    meta(property='og:description' content='#{description}')
+    meta(property='og:image' content='#{facebookImage}')
+    meta(property='og:image:type' content='image/jpeg')
+    meta(property='og:image:width' content='#{facebookImageWidth}')
+    meta(property='og:image:height' content='#{facebookImageHeight}')
+    meta(property='og:type' content='website')
+    meta(property='fb:admins' content='#{facebookAdmin}')
+
+    //- ************************** Tags Twitter ************************** //
+    meta(name='twitter:card' content='summary')
+    meta(name='twitter:site' content='#{twitter}')
+    meta(name='twitter:title' content='#{title}')
+    meta(name='twitter:description' content='#{description}')
+    meta(name='twitter:creator' content='#{twitter}')
+    meta(name='twitter:image' content='#{twitterImage}')
+
+    link(rel="stylesheet", media="screen", href='./lib/css/lib_@@version.css')
+    link(rel="stylesheet", media="screen", href='./css/style_@@version.css')
+    link(rel="icon", type="image/png", href='./img/logo.png')
+
+  body(ng-controller="indexController")
+
+    //- ************************** Tags Google+ ************************** //
+    div.hide
+      h1(itemprop='name', content='#{title}')
+      span(rel='author', href='https://plus.google.com/+VikinglabsBr/posts')
+      //- Atualmente usando o ID do perfil do Gabriel
+      span(rel='publisher', href='https://plus.google.com/115245607527622615616')
+      span(itemprop='description', content='#{description}')
+      img(itemprop='image', content='#{googlePlusImage}')
+
+    .bg
+      img.never_in_mobile(src="/img/fundo.jpg")
+      img.only_in_mobile(src="/img/fundo_mobile.jpg")
+    #fb-root
+              script.
+                (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = '//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId='+'#{facebookAppId}'+'&version=v2.0';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+
+    script
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+    .header_block#header
+      .logo
+        .logo_header(scroll-to="header")
+      nav.sidebar.only_in_mobile
+        button.btn.fa.fa-bars(ng-click="active = !active")
+        #sidebar-wrapper(ng-class="{active : active}")
+          ul.sidebar-nav
+              li
+                a(scroll-to="gstage2", offset="100", ng-click="active = !active") Fase 2
+              li
+                a(scroll-to="gA", offset="100", ng-click="active = !active") Fase 1
+              li
+                a(scroll-to="gA", offset="100", ng-click="active = !active") &nbsp;&nbsp;Grupo A
+              li
+                a(scroll-to="gB", offset="100", ng-click="active = !active") &nbsp;&nbsp;Grupo B
+              li
+                a(scroll-to="gC", offset="100", ng-click="active = !active") &nbsp;&nbsp;Grupo C
+              li
+                a(scroll-to="gD", offset="100", ng-click="active = !active") &nbsp;&nbsp;Grupo D
+              li
+                a(scroll-to="gE", offset="100", ng-click="active = !active") &nbsp;&nbsp;Grupo E
+              li
+                a(scroll-to="gF", offset="100", ng-click="active = !active") &nbsp;&nbsp;Grupo F
+              li
+                a(scroll-to="gG", offset="100", ng-click="active = !active") &nbsp;&nbsp;Grupo G
+              li
+                a(scroll-to="gH", offset="100", ng-click="active = !active") &nbsp;&nbsp;Grupo H
+              li
+                a(scroll-to="share", offset="100", ng-click="active = !active") Compartilhe
+
+
+      nav.menu.never_in_mobile
+        ul
+          li(scroll-to="gstage2", offset="100")
+            a(ng-click='hideDropdown()')
+              span Fase 2
+          li#fase1(dropdown).open
+            a(ng-click='toggleDropdown()')
+              span Fase 1
+            ul.dropdown-menu(ng-show='dropdown')
+              li
+                a(scroll-to="gA", offset="100", ng-click='hideDropdown()')
+                  span Grupo
+                  |  A
+              li
+                a(scroll-to="gB", offset="100", ng-click='hideDropdown()')
+                  span Grupo
+                  |  B
+              li
+                a(scroll-to="gC", offset="100", ng-click='hideDropdown()')
+                  span Grupo
+                  |  C
+              li
+                a(scroll-to="gD", offset="100", ng-click='hideDropdown()')
+                  span Grupo
+                  |  D
+              li
+                a(scroll-to="gE", offset="100", ng-click='hideDropdown()')
+                  span Grupo
+                  |  E
+              li
+                a(scroll-to="gF", offset="100", ng-click='hideDropdown()')
+                  span Grupo
+                  |  F
+              li
+                a(scroll-to="gG", offset="100", ng-click='hideDropdown()')
+                  span Grupo
+                  |  G
+              li
+                a(scroll-to="gH", offset="100", ng-click='hideDropdown()')
+                  span Grupo
+                  |  H
+          li
+            a(scroll-to="share", offset="100", ng-click='hideDropdown()')
+              span Compartilhe
+    div(ng-click="hideDropdown()")          
+      .main
+        .call
+          .alert.alert-warning.alert-ie(ng-style="{display:ie?'inline-block':'none'}" style="display:none;")
+            strong Hummm...
+            span  você está utilizando o Internet Explorer, pode não estar recebendo a melhor experiência possível! :(
+          h1.main-title
+            | Bem Vindo ao Copa Guru!
+          br
+          .logo_guru
+          .lb_layout_double
+            #main-pt
+              .main-text
+                p.shadow Português
+                p
+                  | Acompanhe a Copa do Mundo de Futebol FIFA 2014 de uma maneira divertida e diferente, através de gráficos e informações interativas.
+                  | Explore os gráficos clicando e passando o mouse sobre as informações, e não esqueça de simular os resultados dos jogos que ainda não ocorreram.
+                p Aproveite para compartilhar com seus amigos e nos deixar comentários, sugestões, e se você também é um Guru da Copa, entre em contato para fazer parte do time!
+                p Uma homenagem à Copa do time
+                a(href="http://www.vikinglabs.com.br" target="_blank")
+                  span.logo_vk_classico
+
+            #main-en
+              .main-text
+                p.shadow English
+                p
+                  | Follow the 2014 fifa world cup brazil in a fun and different way through interactive graphics and information.
+                  | Explore the graphics by clicking and passing over the data, and dont forget to simulate the results of the games that hasn't occurred yet.
+                p Enjoy and share with friends, leave comments, suggestions and if you're a world cup guru, please contact us to be part of the team!
+                p A tribute to the 2014 fifa world cup brazil from
+                a(href="http://www.vikinglabs.com.br" target="_blank")
+                  span.logo_vk_classico
+                br
+                br
+
+      +stage2()
+      +group('A')
+      +group('B')
+      +group('C')
+      +group('D')
+      +group('E')
+      +group('F')
+      +group('G')
+      +group('H')
+      +all()
+
+    .podio-webform-frame
+    .footer_block
+      .footer
+        .lb_layout_triple
+          .lb_layout_single.copaguru
+            h2 Sobre
+            .logo_footer
+            .logo_vk
+            p.descricao
+             | Copa Guru é um projeto interno da equipe
+             a(href="http://www.vikinglabs.com.br" target="_blank")  &lt;Viking Labs&gt;
+             |   como uma homenagem a Copa do Mundo de Futebol FIFA 2014 e à todos os amantes do futebol! Divirtam-se e aproveitem.
+             p Teremos mais novidades em breve! ;)
+
+          .lb_layout_single.social_block
+            h2 Entre em contato
+            .form_container
+              script(src="https://podio.com/webforms/8380044/625178.js")
+              script(type='text/javascript').
+                _podioWebForm.render("625178")
+
+          .lb_layout_single#share
+            h2 Compartilhe
+            br
+            .social-share
+              .fb-share-button(data-href="https://www.facebook.com/copaguru", data-type="button_count")
+
+
+              a.twitter-share-button(href='https://twitter.com/share',
+                                     data-url='http://copa.guru',
+                                     data-via='VikingLabsBR',
+                                     data-lang='pt',
+                                     data-hashtags='copaGuru') Tweetar
+              .g-plusone(data-size="medium")
+
+            .fb-like-box-container
+              .fb-like-box(data-href='https://www.facebook.com/copaguru', data-width='357', data-height='258', data-colorscheme='light', data-show-faces='true', data-header='false', data-stream='false', data-show-border='false')
+
+
+    #loading(us-spinner, ng-style="spinnerStyle")
+    script.
+      window.___gcfg = {lang: 'pt-BR'};
+        (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+
+
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-51697966-1', 'copa.guru');
+        ga('send', 'pageview');
+    script(type="text/javascript", src="./lib/js/lib_@@version.js")
+    script(type="text/javascript", src="./js/script_@@version.js")
+
+
+
+
+
