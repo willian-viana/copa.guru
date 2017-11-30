@@ -9,6 +9,7 @@ Projeto destinado a oferecer um visualizador de dados "nunca antes visto na hist
 - Outras coisas mais
 
 
+
 ## O que foi utilizado neste projeto?
 
 - D3 para fazer essa mágica com gráficos acontecer
@@ -17,6 +18,8 @@ Projeto destinado a oferecer um visualizador de dados "nunca antes visto na hist
 - PUG que na época ainda era o finado JADE.
 - LESS (Porque eu não sei exatamente, mas gosto dele)
 - GRUNT (Ele ainda não era finado na época)
+
+
 
 ## Como rodar o projeto?
 
@@ -34,11 +37,14 @@ Se precisar gerar uma release, rode o comando acima sem a palavra `server`.
 
 
 
+
 ## KONAMI CODE
 
-É isso mesmo, tem konami Code neste projeto! Não sabe o que é? Acessa esse [link aqui](https://en.wikipedia.org/wiki)
+É isso mesmo, tem konami Code neste projeto! Não sabe o que é? Acessa esse [link aqui](https://en.wikipedia.org/wiki/Konami_Code) 
 
 Para ver a mágica acontecer, digite rapidamente: (↑) (↑) (↓) (↓) (←) (→) (←) (→) (B) (A)
+
+
 
 
 
