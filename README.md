@@ -33,7 +33,9 @@ Depois da instalação das dependências, você pode rodar o projeto com o coman
 
 ```grunt server```
 
-Se precisar gerar uma release, rode o comando acima sem a palavra `server`.
+A Aplicação roda no `localhost:3333`. Enjoy it! 
+
+Obs.: Se precisar gerar uma release, rode o comando acima sem a palavra `server`.
 
 
 
